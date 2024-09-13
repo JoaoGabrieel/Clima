@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>OLHA O TEMPO</title>
+  </head>
+  <body>
+    <div class="container">
+      <form class="search" method="post">
+        <i class="fa-solid fa-location-dot"></i>
+        <input
+          type="search"
+          name="name_city"
+          class="nome_cidade"
+          placeholder="Buscar Cidade"
+        />
+        <button type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+
+      <div class="weather">
+        <h1>{{nome}}</h1>
+
+        <div class="infos">
+          <div class="temp">
+            <i class="fa-solid fa-cloud"></i>
+            <div class="temp_value">
+              <p>{{temperatura}} <sub>oC</sub></p>
+
+              <p>{{clima}}</p>
+            </div>
+          </div>
+
+          <div id="other_infos">
+            <div class="info">
+              <i class="fa-solid fa-temperature-low"></i>
+              <div>
+                <h2>temp. max</h2>
+
+                <p class="temp_max">{{temp_max}} <sup>oC</sup></p>
+              </div>
+            </div>
+
+            <div class="info">
+              <i id="humity_icon" class="fa-solid fa-droplet"></i>
+              <div>
+                <h2>Temp. min</h2>
+
+                <p id="temp_min">{{temp_min}}</p>
+              </div>
+
+              <div>
+                <h2>humidade</h2>
+
+                <p class="humity">{{humidade}}%</p>
+              </div>
+            </div>
+
+            <div class="info">
+              <i class="fa-solid fa-wind"></i>
+              <div>
+                <h2>vento</h2>
+
+                <p class="wind">{{vento}} km/h</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="alert"></div>
+    </div>
+  </body>
+</html>
