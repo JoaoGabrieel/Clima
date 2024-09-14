@@ -10,6 +10,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
     <title>OLHA O TEMPO</title>
   </head>
   <body>
@@ -27,49 +31,51 @@
         </button>
       </form>
 
-      <div class="weather">
-        <h1>{{nome}}</h1>
+      <div id="weather">
+        <h1 id="title">{{nome}}</h1>
 
         <div class="infos">
           <div class="temp">
-            <i class="fa-solid fa-cloud"></i>
-            <div class="temp_value">
-              <p>{{temperatura}} <sub>oC</sub></p>
-
-              <p>{{clima}}</p>
+            <img
+              id="nuvem"
+              src="https://cdn0.iconfinder.com/data/icons/weather-888/32/weather_cloud_cloudy_sun_sunny-12-512.png"
+              alt="Cloudy weather icon"
+            />
+            <div>
+              <p class="temp_value">{{temperatura}} <sup>&deg;C</sup></p>
+              <p id="temp_description">{{clima}}</p>
             </div>
           </div>
 
           <div id="other_infos">
             <div class="info">
-              <i class="fa-solid fa-temperature-low"></i>
+              <i id="temp_max_icon" class="fa-solid fa-temperature-high"></i>
               <div>
-                <h2>temp. max</h2>
-
-                <p class="temp_max">{{temp_max}} <sup>oC</sup></p>
+                <h2>Temp. max</h2>
+                <p class="temp_max">{{temp_max}} <sup>&deg;C</sup></p>
               </div>
             </div>
 
             <div class="info">
-              <i id="humity_icon" class="fa-solid fa-droplet"></i>
+              <i id="temp_min_icon" class="fa-solid fa-temperature-low"></i>
               <div>
                 <h2>Temp. min</h2>
-
-                <p id="temp_min">{{temp_min}}</p>
-              </div>
-
-              <div>
-                <h2>humidade</h2>
-
-                <p class="humity">{{humidade}}%</p>
+                <p id="temp_min">{{temp_min}} <sup>&deg;C</sup></p>
               </div>
             </div>
 
             <div class="info">
-              <i class="fa-solid fa-wind"></i>
+              <i id="humidity_icon" class="fa-solid fa-droplet"></i>
               <div>
-                <h2>vento</h2>
+                <h2>Humidade</h2>
+                <p class="humidity">{{humidade}}%</p>
+              </div>
+            </div>
 
+            <div class="info">
+              <i id="wind_icon" class="fa-solid fa-wind"></i>
+              <div>
+                <h2>Vento</h2>
                 <p class="wind">{{vento}} km/h</p>
               </div>
             </div>
